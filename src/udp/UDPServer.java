@@ -28,6 +28,7 @@ public class UDPServer implements Runnable{
 						InetAddress.getLocalHost(),
 						clientPort
 				);
+				// Sending Packets
 				serverSocket.send(datagramPacket);
 			}
 		}catch(SocketException e){

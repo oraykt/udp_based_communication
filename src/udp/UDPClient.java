@@ -28,10 +28,11 @@ public class UDPClient implements Runnable{
 			clientSocket.setSoTimeout(5000);
 			while(true){
 				DatagramPacket datagramPacket = new DatagramPacket(buffer,0,buffer.length);
+				// Receiving Packets
 				clientSocket.receive(datagramPacket);
 
+				// Logging Received Packets' data
 				String receivedMessage = new String(datagramPacket.getData());
-
 				System.out.println(receivedMessage);
 			}
 		} catch (SocketException e) {
